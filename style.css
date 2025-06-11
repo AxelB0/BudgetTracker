@@ -111,23 +111,7 @@ button.toggle-button {
     display: none;
 }
 
-/* Add this part to the existing @media query */
 @media (max-width: 480px) {
-    /* Shorten 'Boodschappen' and 'Verzekeringen' on mobile */
-    .category-group[data-category="boodschappen"] .category-header strong {
-        font-size: 1rem;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
-
-    /* Shorten 'Verzekeringen' on mobile */
-    .category-group[data-category="verzekeringen"] .category-header strong::after {
-        font-size: 1rem;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
 
     /* Make the toggle buttons fit better on smaller screens */
     button.toggle-button {
