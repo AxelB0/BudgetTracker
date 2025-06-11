@@ -98,24 +98,19 @@ button.toggle-button {
     color: #222;
 }
 
-/* New styles for toggle button text/icon */
+/* Always show the + sign */
 .toggle-icon {
-    display: none;
+    display: inline;
     font-weight: bold;
     font-size: 1.2rem;
     user-select: none;
 }
 
 .toggle-text {
-    display: inline;
+    display: none;
 }
 
-/* On mobile screens, hide “Uitklappen” text and show plus sign */
+/* Media queries for responsive design */
 @media (max-width: 480px) {
-    .toggle-text {
-        display: none;
-    }
-    .toggle-icon {
-        display: inline;
-    }
+    /* No change needed here since + will always be displayed */
 }
