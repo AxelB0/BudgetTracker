@@ -113,15 +113,4 @@ button.toggle-button {
 
 @media (max-width: 480px) {
 
-    /* Make the toggle buttons fit better on smaller screens */
-    button.toggle-button {
-        padding: 5px;
-        font-size: 1.1rem;
-    }
-
-    /* Adjust the sub-category label/input layout to be more mobile-friendly */
-    .sub-category label {
-        font-size: 0.9rem;
-        width: auto;
-    }
 }
