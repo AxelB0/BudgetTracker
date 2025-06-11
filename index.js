@@ -1,6 +1,6 @@
+
 document.addEventListener("DOMContentLoaded", () => {
     const allToggleButtons = document.querySelectorAll(".toggle-button");
-
 
     const categories = [
         "wonen", "vervoer", "verzekeringen", "huishouden",
