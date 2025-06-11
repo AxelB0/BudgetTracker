@@ -123,9 +123,10 @@ button.toggle-button {
 
     /* Shorten 'Verzekeringen' on mobile */
     .category-group[data-category="verzekeringen"] .category-header strong::after {
-        content: " (Verz.)"; /* Abbreviation for Verzekeringen */
-        font-size: 0.9rem;
-        color: #555;
+        font-size: 1rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 
     /* Make the toggle buttons fit better on smaller screens */
@@ -137,6 +138,7 @@ button.toggle-button {
     /* Reduce the width of inputs on mobile */
     input[type="number"], .readonly-total {
         width: 90%;
+        height: 90%;
         font-size: 0.9rem;
     }
 
