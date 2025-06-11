@@ -124,8 +124,4 @@ button.toggle-button {
         font-size: 0.9rem;
         width: auto;
     }
-
-    .sub-category input[type="number"] {
-        width: 35%;
-    }
 }
