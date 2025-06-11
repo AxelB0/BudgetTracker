@@ -30,6 +30,7 @@ body {
     flex-grow: 1;
 }
 
+/* Adjust input field width and font sizes */
 .readonly-total {
     width: 100px;
     text-align: right;
@@ -110,7 +111,42 @@ button.toggle-button {
     display: none;
 }
 
-/* Media queries for responsive design */
+/* Add this part to the existing @media query */
 @media (max-width: 480px) {
-    /* No change needed here since + will always be displayed */
+    /* Shorten 'Boodschappen' and 'Verzekeringen' on mobile */
+    .category-group[data-category="boodschappen"] .category-header strong {
+        font-size: 1rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    /* Shorten 'Verzekeringen' on mobile */
+    .category-group[data-category="verzekeringen"] .category-header strong::after {
+        content: " (Verz.)"; /* Abbreviation for Verzekeringen */
+        font-size: 0.9rem;
+        color: #555;
+    }
+
+    /* Make the toggle buttons fit better on smaller screens */
+    button.toggle-button {
+        padding: 5px;
+        font-size: 1.1rem;
+    }
+
+    /* Reduce the width of inputs on mobile */
+    input[type="number"], .readonly-total {
+        width: 90%;
+        font-size: 0.9rem;
+    }
+
+    /* Adjust the sub-category label/input layout to be more mobile-friendly */
+    .sub-category label {
+        font-size: 0.9rem;
+        width: auto;
+    }
+
+    .sub-category input[type="number"] {
+        width: 100%;
+    }
 }
