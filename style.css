@@ -126,6 +126,6 @@ button.toggle-button {
     }
 
     .sub-category input[type="number"] {
-        width: 100%;
+        width: 35%;
     }
 }
