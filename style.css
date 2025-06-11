@@ -135,13 +135,6 @@ button.toggle-button {
         font-size: 1.1rem;
     }
 
-    /* Reduce the width of inputs on mobile */
-    input[type="number"], .readonly-total {
-        width: 90%;
-        height: 90%;
-        font-size: 0.9rem;
-    }
-
     /* Adjust the sub-category label/input layout to be more mobile-friendly */
     .sub-category label {
         font-size: 0.9rem;
