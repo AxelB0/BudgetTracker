@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const allToggleButtons = document.querySelectorAll(".toggle-button");
-    const inkomstenInput = document.getElementById("inkomsten");
-    const grandTotalEl = document.getElementById("grand-total");
-    const netTotalEl = document.getElementById("net-total");
+
 
     const categories = [
         "wonen", "vervoer", "verzekeringen", "huishouden",
