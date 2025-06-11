@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+    <h1>Maandelijkse Budget Tracker</h1>
+    <form id="budget-form">
+
+        <!-- Inkomsten -->
+        <div class="category-group">
+            <div class="category-header">
+                <strong>Inkomsten</strong>
+                <input type="number" name="inkomsten" id="inkomsten" placeholder="€" />
+            </div>
+        </div>
+
+        <!-- Reusable Category Block -->
+        <div class="category-group" data-category="wonen">
+            <div class="category-header">
+                <strong>Wonen</strong>
+                <input type="text" class="readonly-total" id="wonen_total_display" value="€0.00" readonly />
+                <button type="button" class="toggle-button" data-target="wonen-details">Uitklappen</button>
+            </div>
+            <div class="sub-category" id="wonen-details">
+                <label>Huur / Hypotheek</label><input type="number" class="wonen-sub" placeholder="€" />
+                <label>Gas / Water / Licht</label><input type="number" class="wonen-sub" placeholder="€" />
+                <label>Internet / TV / Telefoon</label><input type="number" class="wonen-sub" placeholder="€" />
+                <label>Gemeentebelastingen</label><input type="number" class="wonen-sub" placeholder="€" />
+                <label>Verzekeringen (opstal, inboedel)</label><input type="number" class="wonen-sub" placeholder="€" />
+            </div>
+        </div>
+
+        <div class="category-group" data-category="vervoer">
+            <div class="category-header">
+                <strong>Vervoer</strong>
+                <input type="text" class="readonly-total" id="vervoer_total_display" value="€0.00" readonly />
+                <button type="button" class="toggle-button" data-target="vervoer-details">Uitklappen</button>
+            </div>
+            <div class="sub-category" id="vervoer-details">
+                <label>Brandstof</label><input type="number" class="vervoer-sub" placeholder="€" />
+                <label>Openbaar vervoer</label><input type="number" class="vervoer-sub" placeholder="€" />
+                <label>Autoverzekering</label><input type="number" class="vervoer-sub" placeholder="€" />
+                <label>Wegenbelasting</label><input type="number" class="vervoer-sub" placeholder="€" />
+                <label>Onderhoud & reparaties</label><input type="number" class="vervoer-sub" placeholder="€" />
+            </div>
+        </div>
+
+        <div class="category-group" data-category="verzekeringen">
+            <div class="category-header">
+                <strong>Verzekeringen</strong>
+                <input type="text" class="readonly-total" id="verzekeringen_total_display" value="€0.00" readonly />
+                <button type="button" class="toggle-button" data-target="verzekeringen-details">Uitklappen</button>
+            </div>
+            <div class="sub-category" id="verzekeringen-details">
+                <label>Zorgverzekering</label><input type="number" class="verzekeringen-sub" placeholder="€" />
+                <label>Levensverzekering</label><input type="number" class="verzekeringen-sub" placeholder="€" />
+                <label>Overige verzekeringen</label><input type="number" class="verzekeringen-sub" placeholder="€" />
+            </div>
+        </div>
+
+        <div class="category-group" data-category="boodschappen">
+            <div class="category-header">
+                <strong>Boodschappen</strong>
+                <input type="text" class="readonly-total" id="boodschappen_total_display" value="€0.00" readonly />
+                <button type="button" class="toggle-button" data-target="boodschappen-details">Uitklappen</button>
+            </div>
+            <div class="sub-category" id="boodschappen-details" style="display: none;">
+                <label>Boodschappen</label>
+                <input type="number" class="boodschappen-sub" placeholder="€" />
+            </div>
+        </div>
+
+        <div class="category-group" data-category="huishouden">
+            <div class="category-header">
+                <strong>Huishouden</strong>
+                <input type="text" class="readonly-total" id="huishouden_total_display" value="€0.00" readonly />
+                <button type="button" class="toggle-button" data-target="huishouden-details">Uitklappen</button>
+            </div>
+            <div class="sub-category" id="huishouden-details">
+                <label>Schoonmaakmiddelen</label><input type="number" class="huishouden-sub" placeholder="€" />
+                <label>Huishoudelijke apparaten</label><input type="number" class="huishouden-sub" placeholder="€" />
+                <label>Meubels</label><input type="number" class="huishouden-sub" placeholder="€" />
+            </div>
+        </div>
+
+        <div class="category-group" data-category="gezondheid">
+            <div class="category-header">
+                <strong>Gezondheid</strong>
+                <input type="text" class="readonly-total" id="gezondheid_total_display" value="€0.00" readonly />
+                <button type="button" class="toggle-button" data-target="gezondheid-details">Uitklappen</button>
+            </div>
+            <div class="sub-category" id="gezondheid-details">
+                <label>Medicatie</label><input type="number" class="gezondheid-sub" placeholder="€" />
+                <label>Tandarts / huisarts / fysio</label><input type="number" class="gezondheid-sub" placeholder="€" />
+                <label>Sportschool / sportabonnementen</label><input type="number" class="gezondheid-sub" placeholder="€" />
+            </div>
+        </div>
+
+        <div class="category-group" data-category="verzorging">
+            <div class="category-header">
+                <strong>Persoonlijke verzorging</strong>
+                <input type="text" class="readonly-total" id="verzorging_total_display" value="€0.00" readonly />
+                <button type="button" class="toggle-button" data-target="verzorging-details">Uitklappen</button>
+            </div>
+            <div class="sub-category" id="verzorging-details">
+                <label>Kappersbezoek</label><input type="number" class="verzorging-sub" placeholder="€" />
+                <label>Cosmetica</label><input type="number" class="verzorging-sub" placeholder="€" />
+                <label>Kleding & schoenen</label><input type="number" class="verzorging-sub" placeholder="€" />
+            </div>
+        </div>
+
+        <div class="category-group" data-category="vrijetijd">
+            <div class="category-header">
+                <strong>Vrije tijd & Overig</strong>
+                <input type="text" class="readonly-total" id="vrijetijd_total_display" value="€0.00" readonly />
+                <button type="button" class="toggle-button" data-target="vrijetijd-details">Uitklappen</button>
+            </div>
+            <div class="sub-category" id="vrijetijd-details">
+                <label>Uit eten / afhalen</label><input type="number" class="vrijetijd-sub" placeholder="€" />
+                <label>Entertainment</label><input type="number" class="vrijetijd-sub" placeholder="€" />
+                <label>Vakantie / reizen</label><input type="number" class="vrijetijd-sub" placeholder="€" />
+                <label>Cadeaus</label><input type="number" class="vrijetijd-sub" placeholder="€" />
+                <label>Hobby’s</label><input type="number" class="vrijetijd-sub" placeholder="€" />
+                <label>Boeken / cursussen / opleidingen</label><input type="number" class="vrijetijd-sub" placeholder="€" />
+            </div>
+        </div>
+
+        <div class="category-group" data-category="sparen">
+            <div class="category-header">
+                <strong>Sparen & Schulden</strong>
+                <input type="text" class="readonly-total" id="sparen_total_display" value="€0.00" readonly />
+                <button type="button" class="toggle-button" data-target="sparen-details">Uitklappen</button>
+            </div>
+            <div class="sub-category" id="sparen-details">
+                <label>Spaarrekening</label><input type="number" class="sparen-sub" placeholder="€" />
+                <label>Beleggingen</label><input type="number" class="sparen-sub" placeholder="€" />
+                <label>Aflossing schulden</label><input type="number" class="sparen-sub" placeholder="€" />
+                <label>Pensioen (aanvullend)</label><input type="number" class="sparen-sub" placeholder="€" />
+            </div>
+        </div>
+
+        <div class="total-summary">
+            <p><strong>Totaal Uitgaven:</strong> <span id="grand-total">€0.00</span></p>
+            <p><strong>Netto Budget:</strong> <span id="net-total">€0.00</span></p>
+        </div>
+
+    </form>
+
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
